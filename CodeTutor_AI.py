@@ -1,7 +1,7 @@
 import io
 import sys
 import streamlit as st
-import google.genai as genai
+import google.generativeai as genai
 
 # Page Config
 st.set_page_config(
@@ -81,7 +81,7 @@ st.caption("AI-Powered Pedagogical Sandbox with Variable-Trace Time Travel & Com
 if not api_key:
     st.info("👈 Enter your Gemini API key in the sidebar to power the Socratic AI Engine.")
 else:
-    client = genai.Client(api_key=api_key)
+    genai.configure(api_key=api_key)
 
     # Generator
     with st.container():
