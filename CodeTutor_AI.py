@@ -22,8 +22,7 @@ col_s2.metric("Streak 🔥", st.session_state.streak)
 api_key = st.sidebar.text_input("🔑 Gemini API Key", type="password")
 
 # Compatible model names
-selected_model_name = st.sidebar.selectbox("AI Brain Core", ["gemini-1.5-flash-latest", "gemini-2.0-flash", "gemini-1.5-pro-latest"])
-
+selected_model_name = st.sidebar.selectbox("AI Brain Core", ["gemini-2.0-flash", "gemini-1.5-pro-latest"])
 def run_code_with_trace(code_str):
     logs = []
     buffer = io.StringIO()
