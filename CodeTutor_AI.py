@@ -22,7 +22,7 @@ col_s2.metric("Streak 🔥", st.session_state.streak)
 api_key = st.sidebar.text_input("🔑 Gemini API Key", type="password")
 
 # Compatible model names
-selected_model_name = st.sidebar.selectbox("AI Brain Core", ["gemini-2.5-flash", "gemini-1.5-flash", "models/gemini-2.5-flash"])
+selected_model_name = st.sidebar.selectbox("AI Brain Core", ["gemini-1.5-flash-latest", "gemini-2.0-flash", "gemini-1.5-pro-latest"])
 
 def run_code_with_trace(code_str):
     logs = []
@@ -106,4 +106,4 @@ else:
                 with tab_perf:
                     if st.session_state.complexity: st.write(st.session_state.complexity)
     except Exception as err_msg:
-        st.error(f"API Error: {err_msg}. Try switching the AI Brain Core dropdown in the sidebar to 'gemini-1.5-flash' or 'models/gemini-2.5-flash'.")
+        st.error(f"API Error: {err_msg}. Try switching the AI Brain Core dropdown in the sidebar to 'gemini-2.0-flash'.")
