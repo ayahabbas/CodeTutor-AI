@@ -1,9 +1,7 @@
 import io
 import sys
-import traceback
 import streamlit as st
 import google.genai as genai
-from streamlit_code_editor import code_editor
 
 # Page Config
 st.set_page_config(
@@ -130,15 +128,11 @@ else:
         with left_col:
             st.subheader("💻 IDE Sandbox")
             
-            response = code_editor(
-                st.session_state.buggy_code,
-                language="python",
-                theme="monokai",
-                height=[300, 500],
-                options={"wrap": True, "lineNumbers": True}
+            edited_code = st.text_area(
+                "Code Editor:",
+                value=st.session_state.buggy_code,
+                height=350
             )
-            
-            edited_code = response['text'] if response['text'] else st.session_state.buggy_code
 
             c_btn1, c_btn2, c_btn3 = st.columns(3)
             run_btn = c_btn1.button("▶️ Execute Code", use_container_width=True)
